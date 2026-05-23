@@ -20,9 +20,9 @@ export function initLocalStorage() {
     localStorage.setItem(STORAGE_KEY_USERS, JSON.stringify(INITIAL_USERS));
   }
   if (!localStorage.getItem(STORAGE_KEY_CONFIG)) {
-    const envUrl = (import.meta.env.VITE_APPS_SCRIPT_URL as string) || '';
+    const envUrl = (import.meta.env.VITE_APPS_SCRIPT_URL as string) || 'https://script.google.com/macros/s/AKfycbxDB2warANlWcP9uqc7xG1cLl7_ER-lyFxmQCKmSlBMuo6Kxfj8mhYNgIpBiLGJiY6z/exec';
     const defaultConfig: WebSyncConfig = {
-      enabled: !!envUrl,
+      enabled: true, // Auto-enable since we have a hardcoded URL
       appsScriptUrl: envUrl
     };
     localStorage.setItem(STORAGE_KEY_CONFIG, JSON.stringify(defaultConfig));
@@ -96,7 +96,7 @@ export function getSyncConfig(): WebSyncConfig {
   if (raw) {
     try {
       const config = JSON.parse(raw) as WebSyncConfig;
-      const envUrl = (import.meta.env.VITE_APPS_SCRIPT_URL as string) || '';
+      const envUrl = (import.meta.env.VITE_APPS_SCRIPT_URL as string) || 'https://script.google.com/macros/s/AKfycbxDB2warANlWcP9uqc7xG1cLl7_ER-lyFxmQCKmSlBMuo6Kxfj8mhYNgIpBiLGJiY6z/exec';
       if (!config.appsScriptUrl && envUrl) {
         config.appsScriptUrl = envUrl;
         config.enabled = true;
@@ -107,8 +107,8 @@ export function getSyncConfig(): WebSyncConfig {
       // fallback
     }
   }
-  const envUrl = (import.meta.env.VITE_APPS_SCRIPT_URL as string) || '';
-  return { enabled: !!envUrl, appsScriptUrl: envUrl };
+  const envUrl = (import.meta.env.VITE_APPS_SCRIPT_URL as string) || 'https://script.google.com/macros/s/AKfycbxDB2warANlWcP9uqc7xG1cLl7_ER-lyFxmQCKmSlBMuo6Kxfj8mhYNgIpBiLGJiY6z/exec';
+  return { enabled: true, appsScriptUrl: envUrl };
 }
 
 // Save config
