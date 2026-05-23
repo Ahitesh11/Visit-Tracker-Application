@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  /* Overriding default blue and indigo to PASMIN Olive Green */
+  --color-blue-50: #f5f8f0;
+  --color-blue-100: #e8eedb;
+  --color-blue-200: #d1dfb8;
+  --color-blue-300: #b4c98f;
+  --color-blue-400: #95af63;
+  --color-blue-500: #7a9c38;
+  --color-blue-600: #62822a;
+  --color-blue-700: #4a6320;
+  --color-blue-800: #394d1c;
+  --color-blue-900: #31411a;
+  --color-blue-950: #1a240c;
+  
+  --color-indigo-50: #f5f8f0;
+  --color-indigo-100: #e8eedb;
+  --color-indigo-200: #d1dfb8;
+  --color-indigo-300: #b4c98f;
+  --color-indigo-400: #95af63;
+  --color-indigo-500: #7a9c38;
+  --color-indigo-600: #62822a;
+  --color-indigo-700: #4a6320;
+  --color-indigo-800: #394d1c;
+  --color-indigo-900: #31411a;
+  --color-indigo-950: #1a240c;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #f8fafc; /* Keep a very subtle slate-50 background */
+}

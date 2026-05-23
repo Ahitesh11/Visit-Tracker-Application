@@ -1,0 +1,6 @@
+{
+  "name": "FMS Field Visit Planner",
+  "description": "Field Management System for Sales Visits with Master Sheet integration, automated reporting, GPS auto-detect and Apps Script sync code.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
